@@ -16,7 +16,7 @@ public class StarterApplication {
     }
 
     @Bean
-    CommandLineRunner init(ItemRepository repository) {
+    CommandLineRunner init1(ItemRepository repository) {
         return args -> {
             Item firstItem = new Item(null, "first Item", 50.00);
             Item secondItem = new Item(null, "second item", 100.00);
