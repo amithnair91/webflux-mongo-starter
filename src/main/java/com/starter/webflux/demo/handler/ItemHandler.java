@@ -21,7 +21,7 @@ public class ItemHandler {
         this.itemRepository = itemRepository;
     }
 
-    public Mono<ServerResponse> getAllItems() {
+    public Mono<ServerResponse> getAllItems(ServerRequest request) {
         Flux<Item> items = itemRepository.findAll();
 
         return ServerResponse.ok().contentType(MediaType.APPLICATION_JSON).body(items, Item.class);
@@ -77,7 +77,7 @@ public class ItemHandler {
 
     }
 
-    public Mono<ServerResponse> deleteAllItems() {
+    public Mono<ServerResponse> deleteAllItems(ServerRequest request) {
         return ServerResponse.ok().build(itemRepository.deleteAll());
     }
 
